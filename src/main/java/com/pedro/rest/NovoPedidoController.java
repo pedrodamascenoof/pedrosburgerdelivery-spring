@@ -55,7 +55,7 @@ public class NovoPedidoController {
 				
 				Optional<Item> itemOpt = itemRepository.findById(Long.parseLong(itemId));
 				Item item = itemOpt.get();
-				 
+				
 				itensPedidos.add(item);
 				valorTotal += item.getPreco();
 			}
@@ -66,7 +66,6 @@ public class NovoPedidoController {
 			c.getPedidos().add(pedido);
 
 			this.clienteRepository.saveAndFlush(c);
-			
 			enviaNotificacao.enviaEmail(c,pedido);
 			
 			List<Long> pedidosID = new ArrayList<Long>();

@@ -8,7 +8,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import com.pedro.api.FluxoPedido;
+
 import com.pedro.domain.Cliente;
 import com.pedro.domain.Item;
 import com.pedro.domain.Pedido;
@@ -53,10 +53,10 @@ public class RepositoryTest
     	listaPedidoDavi1.add(burger2);
     	listaPedidoDavi1.add(salada3);
     	
-    	Pedido pedidoDoPedro = new Pedido(ID_PEDIDO1,Pedro,listaPedidoPedro1,burger1.getPreco(),FluxoPedido.CHEGOU_NA_COZINHA.name() );
+    	Pedido pedidoDoPedro = new Pedido(ID_PEDIDO1,Pedro,listaPedidoPedro1,burger1.getPreco());
     	Pedro.novoPedido(pedidoDoPedro);
     	
-    	Pedido pedidoDoDavi = new Pedido(ID_PEDIDO2,Davi,listaPedidoDavi1, burger2.getPreco()+salada3.getPreco(),FluxoPedido.CHEGOU_NA_COZINHA.name());
+    	Pedido pedidoDoDavi = new Pedido(ID_PEDIDO2,Davi,listaPedidoDavi1, burger2.getPreco()+salada3.getPreco());
     	Davi.novoPedido(pedidoDoDavi);
     	
     	System.out.println(">>> Pedido 1 - Pedro : "+ pedidoDoPedro);
@@ -68,7 +68,7 @@ public class RepositoryTest
 
 		List<Item> listaPedidoPedro2 = new ArrayList<Item>();
 		listaPedidoPedro2.add(burger2);
-    	Pedido pedido2DoPedro  = new Pedido(ID_PEDIDO3,Pedro,listaPedidoPedro2,burger2.getPreco(),FluxoPedido.CHEGOU_NA_COZINHA.name());
+    	Pedido pedido2DoPedro  = new Pedido(ID_PEDIDO3,Pedro,listaPedidoPedro2,burger2.getPreco());
     	Pedro.novoPedido(pedido2DoPedro);
     	clienteRepository.saveAndFlush(Pedro);
     	System.out.println(">>> Pedido 2 - Pedro : "+ pedido2DoPedro);

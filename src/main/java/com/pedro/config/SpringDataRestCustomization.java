@@ -15,8 +15,9 @@ public class SpringDataRestCustomization
 implements RepositoryRestConfigurer 
 {
 
-	@Override
-	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-		config.exposeIdsFor(Item.class,ClienteRepository.class);
-	}
+    @Override
+    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
+        config.exposeIdsFor(Item.class,ClienteRepository.class);
+    }
 }
+

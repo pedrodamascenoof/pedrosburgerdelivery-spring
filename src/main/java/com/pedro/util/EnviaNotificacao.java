@@ -8,7 +8,6 @@ import com.pedro.domain.Pedido;
 import com.pedro.dto.Notificacao;
 
 
-
 @Component
 public class EnviaNotificacao {
 
